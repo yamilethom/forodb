@@ -20,7 +20,7 @@ export class ApiRestService {
   }
 
   getAllPreguntas() {
-    return this.http.get<any>(this.url + "preguntas")
+    return this.http.get<any>(this.url + "preguntas?pageSize=100")
   }
 
   createPregunta(categoria: string, correo: string, pregunta: string, fecha: string) {
@@ -40,7 +40,7 @@ export class ApiRestService {
         }
       }
     }
-    return this.http.post(this.url + "preguntas", {})
+    return this.http.post(this.url + "preguntas", newDoc)
   }
 
   updatePregunta(categoria: string, correo: string, pregunta: string, fecha: string, id: string) {

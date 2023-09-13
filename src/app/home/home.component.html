@@ -26,6 +26,7 @@
                     <tr>
                         <th>No</th>
                         <th>Tema</th>
+                        <th>Usuario</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -33,12 +34,13 @@
                     <tr *ngFor="let p of preguntas">
                         <td>{{p.no}}</td>
                         <td>{{p.pregunta}}</td>
+                        <td>{{p.correo}}</td>
                         <td class="text-end">
                             <button class="btn btn-outline-secondary"><i class="bi bi-eye-fill"></i></button>
                             &nbsp;
                             <button class="btn btn-outline-success"><i class="bi bi-pencil-fill"></i></button>
                             &nbsp;
-                            <button class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i></button>
+                            <button class="btn btn-outline-danger" (click)="borrarPregunta(p.id)"><i class="bi bi-trash-fill"></i></button>
                         </td>
                     </tr>
                 </tbody>
