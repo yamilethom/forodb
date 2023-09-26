@@ -43,8 +43,14 @@ export class ApiRestService {
     return this.http.post(this.url + "preguntas", newDoc)
   }
 
-  updatePregunta(categoria: string, correo: string, pregunta: string, fecha: string, id: string) {
-    return this.http.patch(this.url + "preguntas/" + id, {})
+  updatePregunta(pregunta:string, id:string) {
+    const newDoc = {"fields": {
+        "pregunta": {
+          "stringValue": pregunta
+        }
+      }
+    }
+    return this.http.patch(this.url + "preguntas/"+id+"?updateMask.fieldPaths=pregunta", newDoc)
   }
 
   deletePregunta(id: string) {
