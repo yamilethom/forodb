@@ -54,6 +54,6 @@ export class ApiRestService {
   }
 
   deletePregunta(id: string) {
-    return this.http.delete(this.url + "preguntas/" + id)
+    return this.http.delete(this.url + "preguntas/"+id)
   }
 }
